@@ -18,13 +18,13 @@ class Customer
     Meal.new(waiter, self, total, tip)
   end
 
-  def meals
+  def meals  #returning the meal's customer matches the current customer
     Meal.all.select do |meal|
       meal.customer == self
     end
   end
 
-  def waiters
+  def waiters  #a list of all the waiters the customer has interacted with
     meals.map do |meal|
       meal.waiter
     end
